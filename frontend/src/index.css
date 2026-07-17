@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------
+   THEME TOKENS — neumorphic (soft-UI) design, same look as the login
+   screen, applied to the whole app. Toggling the `light` class on <html>
+   swaps between the light-gray and dark-gray neumorphic variants.
+
+   Want to retune the look? These are the only values you need to touch:
+------------------------------------------------------------------------ */
+:root {
+  /* dark neumorphic variant */
+  --color-void: 30 32 38;            /* page + card background */
+  --color-panel: 30 32 38;
+  --color-edge: 148 163 184;
+  --color-ink: 214 216 220;          /* primary text */
+  --color-accent-glow: 148 163 184;  /* muted slate accent for labels/icons */
+  --color-accent-core: 30 32 38;     /* matches void so buttons "blend in" (neumorphic) */
+  --color-amber: 255 176 32;
+  --color-crimson: 255 59 92;
+  --nm-shadow-dark: #16171b;         /* darker "carved" shadow */
+  --nm-shadow-light: #2a2d35;        /* lighter "highlight" shadow */
+}
+
+html.light {
+  /* light neumorphic variant — matches the login screen exactly */
+  --color-void: 230 230 233;         /* #E6E6E9 */
+  --color-panel: 230 230 233;
+  --color-edge: 107 114 128;
+  --color-ink: 75 75 79;             /* #4B4B4F */
+  --color-accent-glow: 107 114 128;  /* muted slate accent for labels/icons */
+  --color-accent-core: 230 230 233;  /* matches void so buttons "blend in" (neumorphic) */
+  --color-amber: 217 119 6;
+  --color-crimson: 220 38 63;
+  --nm-shadow-dark: #c5c5c8;
+  --nm-shadow-light: #ffffff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: rgb(var(--color-ink));
+  background-color: rgb(var(--color-void));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer components {
+  /* Neumorphic "raised" card: same background as the page, only the soft
+     light/dark shadow pair makes it look like it's popping off the surface. */
+  .glass-panel {
+    @apply bg-void rounded-[2rem] shadow-glow-cyan;
+  }
+
+  .glass-card {
+    @apply bg-void rounded-2xl shadow-glow-cyan;
+  }
+
+  .hud-label {
+    @apply text-[11px] tracking-[0.2em] uppercase text-cyan-glow/80 font-mono;
+  }
+
+  .metric-value {
+    @apply font-display text-2xl text-ink tabular-nums;
+  }
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-accent-glow) / 0.35); border-radius: 4px; }
