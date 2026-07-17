@@ -4,6 +4,9 @@
 **Demo Login Credentials (for instant access):**
 * **Username:** `SUBHAN`
 * **Password:** `12341234`
+**Important Note on Dashboard Modes:**
+* **Simulated Mode (Recommended for Instant Demo):** Click this to instantly watch real-time mathematical telemetry streaming for an industrial pump. No setup required!
+* **"This Laptop" Mode (Local Hardware Monitoring):** To see your own laptop's real-time CPU/Memory metrics on this live dashboard, security protocols require you to run the Python backend locally. Simply clone this repo and start the backend using `uvicorn main:app --reload`. The live Vercel frontend will automatically securely latch onto your local hardware agent.
 
 ---
 ---
