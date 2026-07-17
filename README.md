@@ -1,5 +1,12 @@
-# AEGIS — Predictive Maintenance & Conversational Diagnostics Suite
+# AEGIS - Real-Time Predictive Maintenance Dashboard
+**Live Project Link:** [Click Here to Open Dashboard](https://predictive-maintenance-dashboard-one.vercel.app)
 
+**Demo Login Credentials (for instant access):**
+* **Username:** `SUBHAN`
+* **Password:** `12341234`
+
+---
+---
 A production-grade blueprint for an industrial IoT digital-twin dashboard: real-time
 telemetry, a hybrid ML + RAG + LLM diagnostics pipeline, an audited operator login
 system, and an autonomous high-risk emergency escalation flow.
